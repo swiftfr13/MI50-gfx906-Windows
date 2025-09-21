@@ -1,7 +1,7 @@
 # MI50-gfx906-Windows
 Guide on running MI50 as a normal GPU in Windows
 
-# Host Environment
+## Host Environment
 - Linux install
 - Windows install
 - Bios file for the AMD Radeon Pro V420(Needed in Linux)
@@ -10,7 +10,7 @@ Guide on running MI50 as a normal GPU in Windows
 - ASPM options related to PCI should be off in Bios. Some options may work, so you'll need some trial and error
 - Above 4g Decoding should be on
 
-# Download links for the necessary files
+## Download links for the necessary files
 V420 Bios: https://drive.google.com/file/d/1AQlbrnsafzrFXaliV5narZpsJqvfZkft/view?usp=sharing
  - The size of the Bios should be 1.0MB, unlike the Bios from Techpowerup, which is a lot smaller in size.
 
@@ -20,7 +20,7 @@ AMDVBFlash: https://www.techpowerup.com/download/ati-atiflash/
 Radeon Driver: https://www.amd.com/en/support/downloads/previous-drivers.html/graphics/radeon-rx/radeon-rx-vega-series/amd-radeon-vii.html
  - Latest version that works as far as I know is v24.9.1, released in 2024-10-01. Newest version doesn't include the driver for the Radeon Pro VII, which is the one we need.
 
-# Commands
+## Commands
 - After installing Linux(Ubuntu in this case), download AMDVBFlash.
 - Extract the file and cd into the extracted folder.
 ```
@@ -125,7 +125,7 @@ Adapter  0    SEG=0000, BN=07, DN=00, PCIID=66A11002, SSID=********)
         Image[1]: Size(44032 Bytes), Type(Hybrid Image)
 ```
 
-
+## Installing the drivers in Windows
 - Reboot into Windows
 - Download Radeon Driver for the Radeon VII
 - Launch the Radeon Driver file. It should Initialize install, but fail.
