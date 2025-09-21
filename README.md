@@ -10,7 +10,7 @@ Guide on running MI50 as a normal GPU in Windows
 - ASPM options related to PCI should be off in Bios. Some options may work, so you'll need some trial and error
 - Above 4g Decoding should be on
 
-# Link to download necessary files
+# Download links for the necessary files
 V420 Bios: https://drive.google.com/file/d/1AQlbrnsafzrFXaliV5narZpsJqvfZkft/view?usp=sharing
  - The size of the Bios should be 1.0MB, unlike the Bios from Techpowerup, which is a lot smaller in size.
 
