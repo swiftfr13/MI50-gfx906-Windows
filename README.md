@@ -11,7 +11,7 @@ Guide on running Radeon Instinct MI50 32GB as a normal GPU in Windows
 - Above 4g Decoding should be on
 
 ## Things to know before you install
-# This only works on the 32gb version of the Radeon Instinct MI50, and doing this on the 16gb version will probably result in bricking your GPU. There are already a lot of guides on flashing the 16gb version so use that instead
+# This only works on the 32gb version of the Radeon Instinct MI50, and doing this on the 16gb version will probably result in your GPU being bricked. There are already a lot of guides on flashing the 16gb version so use that instead
 - As far as I'm concerned, there are two 'official' and one unofficial version of the 32gb version of the MI50. The official version has P/N that either ends with '1413'/'1711' and have multiple stickers on the corner of the backplate, while the unofficial ones have one sticker on the backplate and have less cores. I don't know if it works on the unofficial version since both of my cards were the 1413 variant.
 
 ## Download links for the necessary files
