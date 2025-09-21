@@ -131,7 +131,7 @@ Adapter  0    SEG=0000, BN=07, DN=00, PCIID=66A11002, SSID=********)
 - Launch the Radeon Driver file. It should Initialize install, but fail.
 - Go to C:. There should be a new folder called 'AMD'.
 - Launch Device Manager, you should see 'Microsoft Basic Display Adapter' under 'Display adapters'. If you don't see it, select 'View' -> 'Show Hidden Devices' and see if it's there. If you get Error 45, turning off ASPM should solve the problem. 
-- In 'Events', it should say 'Device install requested'. Information: '~DEV_66A0~ requires further installation'.
+- In 'Events', it should say 'Device install requested'. Information: '-DEV_66A0- requires further installation'.
 - Go to 'Details' -> 'Update Driver' -> 'Browse my computer for drivers' -> 'Let me pick from a list of available drivers on my computer' -> 'Have Disk...' -> 'Browse'
 - Select 'C://AMD/AMD-Software-Installer/Packages/Drivers/Display/WT6A_INF/u0407052.inf' and press 'OK'
 - Scroll down, and select 'AMD Radeon Pro VII'. If it's not on the list, make sure you installed the v24.9.1 instead of the newest version.
