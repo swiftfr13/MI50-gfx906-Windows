@@ -2,13 +2,13 @@
 Guide on running MI50 as a normal GPU in Windows
 
 # Host Environment
-- Linux install.
-- Windows install.
+- Linux install
+- Windows install
 - Bios file for the AMD Radeon Pro V420(Needed in Linux)
 - AMDVBFlash(Needed in Linux)
 - Radeon Driver for the AMD Radeon VII(Needed in Linux)
-- ASPM options related to PCI should be off in Bios. Some options may work, so you'll need some trial and error.
-- Above 4g Decoding should be on.
+- ASPM options related to PCI should be off in Bios. Some options may work, so you'll need some trial and error
+- Above 4g Decoding should be on
 
 # Link to download necessary files
 V420 Bios: https://drive.google.com/file/d/1AQlbrnsafzrFXaliV5narZpsJqvfZkft/view?usp=sharing
