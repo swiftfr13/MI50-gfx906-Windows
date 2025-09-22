@@ -226,7 +226,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pci realloc pci=noaer pcie_aspm=off iom
 ```
 
 
-## Installing driver in Windows
+## Installing Radeon driver in Windows
 - Reboot into Windows
 - Download Radeon Driver for the Radeon VII
 - Launch the Radeon Driver file. It should Initialize install, but fail.
