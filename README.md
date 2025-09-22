@@ -130,6 +130,95 @@ Adapter  0    SEG=0000, BN=07, DN=00, PCIID=66A11002, SSID=********)
         Image[0]: Size(59392 Bytes), Type(Legacy Image)
         Image[1]: Size(44032 Bytes), Type(Hybrid Image)
 ```
+- lspci
+```
+lspci -vvv
+'''
+- Output Example
+'''
+VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeon Pro/Radeon Instinct] (prog-if 00 [VGA controller])
+	Subsystem: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeon Pro/Radeon Instinct]
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0, Cache Line Size: 64 bytes
+	Interrupt: pin A routed to IRQ 222
+	IOMMU group: 24
+	Region 0: Memory at 4800000000 (64-bit, prefetchable) [size=32G]
+	Region 2: Memory at 4400000000 (64-bit, prefetchable) [size=2M]
+	Region 4: I/O ports at 5000 [size=256]
+	Region 5: Memory at 75300000 (32-bit, non-prefetchable) [size=512K]
+	Expansion ROM at 75380000 [disabled] [size=128K]
+	Capabilities: [48] Vendor Specific Information: Len=08 <?>
+	Capabilities: [50] Power Management version 3
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0-,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 NoSoftRst+ PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [64] Express (v2) Legacy Endpoint, MSI 00
+		DevCap:	MaxPayload 256 bytes, PhantFunc 0, Latency L0s <4us, L1 unlimited
+			ExtTag+ AttnBtn- AttnInd- PwrInd- RBE+ FLReset-
+		DevCtl:	CorrErr- NonFatalErr- FatalErr- UnsupReq-
+			RlxdOrd+ ExtTag+ PhantFunc- AuxPwr- NoSnoop+
+			MaxPayload 256 bytes, MaxReadReq 512 bytes
+		DevSta:	CorrErr+ NonFatalErr- FatalErr- UnsupReq+ AuxPwr- TransPend-
+		LnkCap:	Port #0, Speed 16GT/s, Width x16, ASPM L0s L1, Exit Latency L0s <64ns, L1 <1us
+			ClockPM- Surprise- LLActRep- BwNot- ASPMOptComp+
+		LnkCtl:	ASPM L0s L1 Enabled; RCB 64 bytes, Disabled- CommClk+
+			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
+		LnkSta:	Speed 16GT/s, Width x16
+			TrErr- Train- SlotClk+ DLActive- BWMgmt- ABWMgmt-
+		DevCap2: Completion Timeout: Range ABCD, TimeoutDis+ NROPrPrP- LTR+
+			 10BitTagComp+ 10BitTagReq+ OBFF Not Supported, ExtFmt+ EETLPPrefix+, MaxEETLPPrefixes 1
+			 EmergencyPowerReduction Not Supported, EmergencyPowerReductionInit-
+			 FRS-
+			 AtomicOpsCap: 32bit+ 64bit+ 128bitCAS-
+		DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis- LTR+ 10BitTagReq- OBFF Disabled,
+			 AtomicOpsCtl: ReqEn+
+		LnkCap2: Supported Link Speeds: 2.5-16GT/s, Crosslink- Retimer+ 2Retimers+ DRS-
+		LnkCtl2: Target Link Speed: 16GT/s, EnterCompliance- SpeedDis-
+			 Transmit Margin: Normal Operating Range, EnterModifiedCompliance- ComplianceSOS-
+			 Compliance Preset/De-emphasis: -6dB de-emphasis, 0dB preshoot
+		LnkSta2: Current De-emphasis Level: -3.5dB, EqualizationComplete+ EqualizationPhase1+
+			 EqualizationPhase2+ EqualizationPhase3+ LinkEqualizationRequest-
+			 Retimer- 2Retimers- CrosslinkRes: unsupported
+	Capabilities: [a0] MSI: Enable+ Count=1/1 Maskable- 64bit+
+		Address: 00000000fee00f58  Data: 0000
+	Capabilities: [100 v1] Vendor Specific Information: ID=0001 Rev=1 Len=010 <?>
+	Capabilities: [150 v2] Advanced Error Reporting
+		UESta:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
+		UEMsk:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
+		UESvrt:	DLP+ SDES+ TLP- FCP+ CmpltTO- CmpltAbrt- UnxCmplt- RxOF+ MalfTLP+ ECRC- UnsupReq- ACSViol-
+		CESta:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- AdvNonFatalErr+
+		CEMsk:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- AdvNonFatalErr+
+		AERCap:	First Error Pointer: 00, ECRCGenCap+ ECRCGenEn- ECRCChkCap+ ECRCChkEn-
+			MultHdrRecCap- MultHdrRecEn- TLPPfxPres- HdrLogCap-
+		HeaderLog: 00000000 00000000 00000000 00000000
+	Capabilities: [200 v1] Physical Resizable BAR
+		BAR 0: current size: 32GB, supported: 256MB 512MB 1GB 2GB 4GB 8GB 16GB 32GB
+		BAR 2: current size: 2MB, supported: 2MB 4MB 8MB 16MB 32MB 64MB 128MB 256MB
+	Capabilities: [270 v1] Secondary PCI Express
+		LnkCtl3: LnkEquIntrruptEn- PerformEqu-
+		LaneErrStat: 0
+	Capabilities: [2a0 v1] Access Control Services
+		ACSCap:	SrcValid- TransBlk- ReqRedir- CmpltRedir- UpstreamFwd- EgressCtrl- DirectTrans-
+		ACSCtl:	SrcValid- TransBlk- ReqRedir- CmpltRedir- UpstreamFwd- EgressCtrl- DirectTrans-
+	Capabilities: [2b0 v1] Address Translation Service (ATS)
+		ATSCap:	Invalidate Queue Depth: 00
+		ATSCtl:	Enable-, Smallest Translation Unit: 00
+	Capabilities: [2c0 v1] Page Request Interface (PRI)
+		PRICtl: Enable- Reset-
+		PRISta: RF- UPRGI- Stopped+
+		Page Request Capacity: 00000100, Page Request Allocation: 00000000
+	Capabilities: [2d0 v1] Process Address Space ID (PASID)
+		PASIDCap: Exec+ Priv+, Max PASID Width: 10
+		PASIDCtl: Enable- Exec- Priv-
+	Capabilities: [320 v1] Latency Tolerance Reporting
+		Max snoop latency: 15728640ns
+		Max no snoop latency: 15728640ns
+	Capabilities: [400 v1] Data Link Feature <?>
+	Capabilities: [410 v1] Physical Layer 16.0 GT/s <?>
+	Capabilities: [440 v1] Lane Margining at the Receiver <?>
+	Kernel driver in use: amdgpu
+	Kernel modules: amdgpu
+'''
 
 ## Installing the drivers in Windows
 - Reboot into Windows
