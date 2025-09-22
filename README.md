@@ -219,6 +219,12 @@ VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeo
 	Kernel driver in use: amdgpu
 	Kernel modules: amdgpu
 ```
+## ASPM option
+- After turning on ASPM back on in the Bios, Linux might not be able to initialize the GPU. You should add ASPM related options in /etc/default/grub to initialize the GPU.
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pci realloc pci=noaer pcie_aspm=off iommu=pt"
+```
+
 
 ## Installing drivers in Windows
 - Reboot into Windows
