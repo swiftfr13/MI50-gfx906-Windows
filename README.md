@@ -220,7 +220,7 @@ VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeo
 	Kernel modules: amdgpu
 ```
 
-## Installing the drivers in Windows
+## Installing drivers in Windows
 - Reboot into Windows
 - Download Radeon Driver for the Radeon VII
 - Launch the Radeon Driver file. It should Initialize install, but fail.
