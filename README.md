@@ -26,7 +26,7 @@ AMDVBFlash: https://www.techpowerup.com/download/ati-atiflash/
 Radeon Driver: https://www.amd.com/en/support/downloads/previous-drivers.html/graphics/radeon-rx/radeon-rx-vega-series/amd-radeon-vii.html
  - Latest version that works as far as I know is v24.9.1, released in 2024-10-01. Newest version doesn't include the driver for the Radeon Pro VII, which is the one we need.
 
-## Commands
+## Getting ready
 - After installing Linux(Ubuntu in this case), download AMDVBFlash.
 - Extract the file and cd into the extracted folder.
 ```
@@ -77,7 +77,7 @@ sudo ./amdvbflash -unlockrom 0
 ROM Unlocked
 ```
 
-- Flashing the Bios
+## Flashing the Bios
 - Download the V420 Bios, copy the file to the AMDVBFlash folder, and change the name to something simple, such as v420.bin
 # Flashing the Bios can possibly brick your GPU, so do it at your own risk!! Check the command before executing it
 # Flashing the Bios can possibly brick your GPU, so do it at your own risk!! Check the command before executing it
@@ -219,8 +219,6 @@ VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeo
 	Kernel driver in use: amdgpu
 	Kernel modules: amdgpu
 ```
-- I had to disable ReBAR in my pc since installing 3 GPUs in Z690 Hero motherboard gave me d4 error when the pc booted.
-
 ## ASPM option
 - After turning on ASPM back on in the Bios, Linux might not be able to initialize the GPU. You should add ASPM related options in /etc/default/grub to initialize the GPU.
 ```
