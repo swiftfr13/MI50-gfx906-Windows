@@ -219,6 +219,8 @@ VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeo
 	Kernel driver in use: amdgpu
 	Kernel modules: amdgpu
 ```
+- I had to disable ReBAR in my pc since installing 3 GPUs in Z690 Hero motherboard gave me d4 error when the pc booted.
+
 ## ASPM option
 - After turning on ASPM back on in the Bios, Linux might not be able to initialize the GPU. You should add ASPM related options in /etc/default/grub to initialize the GPU.
 ```
