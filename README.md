@@ -133,9 +133,9 @@ Adapter  0    SEG=0000, BN=07, DN=00, PCIID=66A11002, SSID=********)
 - lspci
 ```
 lspci -vvv
-'''
+```
 - Output Example
-'''
+```
 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeon Pro/Radeon Instinct] (prog-if 00 [VGA controller])
 	Subsystem: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeon Pro/Radeon Instinct]
 	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
@@ -218,7 +218,7 @@ VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeo
 	Capabilities: [440 v1] Lane Margining at the Receiver <?>
 	Kernel driver in use: amdgpu
 	Kernel modules: amdgpu
-'''
+```
 
 ## Installing the drivers in Windows
 - Reboot into Windows
