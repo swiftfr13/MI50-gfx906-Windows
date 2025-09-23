@@ -85,7 +85,7 @@ ROM Unlocked
 # Flashing the Bios can possibly brick your GPU, so do it at your own risk!! Check the command before executing it
 # Flashing the Bios can possibly brick your GPU, so do it at your own risk!! Check the command before executing it
 ```
-sudo ./amdvbflash -f(Force flash) -p(Select GPU) #GPU_ID #FILE_NAME
+sudo ./amdvbflash -f(Force flash) -p #GPU_ID #FILE_NAME
 ```
 ```
 sudo ./amdvbflash -f -p 0 v420.bin
