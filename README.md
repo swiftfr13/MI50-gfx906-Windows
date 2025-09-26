@@ -10,11 +10,13 @@ Guide on running Radeon Instinct MI50 32GB as a normal GPU in Windows
 ## Host Environment
 - Linux install
 - Windows install
+- ASPM options related to PCI should be off in Bios. Some options may work, so you'll need to do some trial and error
+- Above 4g Decoding should be on
+- CSM related options should be off
+- It's recommended to have ReBAR on, but on my Z690 Hero having 2x MI50s plus 1 Arc B580 gives me d4 pci resource allocation error so i had to turn if off
 - Bios file for the AMD Radeon Pro V420(Needed in Linux)
 - AMDVBFlash(Needed in Linux)
 - Radeon Driver for the AMD Radeon VII(Needed in Linux)
-- ASPM options related to PCI should be off in Bios. Some options may work, so you'll need some trial and error
-- Above 4g Decoding should be on
 
 ## Download links for the necessary files
 V420 Bios: https://drive.google.com/file/d/1AQlbrnsafzrFXaliV5narZpsJqvfZkft/view?usp=sharing
@@ -221,6 +223,10 @@ VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeo
 ```
 ## ASPM option
 - After turning on ASPM back on in the Bios, Linux might not be able to initialize the GPU. You should add ASPM related options in /etc/default/grub to initialize the GPU.
+```
+nano /etc/default/grub
+```
+- Add the line below to the 'GRUB_CMDLINE_LINUX_DEFAULT'
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pci realloc pci=noaer pcie_aspm=off iommu=pt"
 ```
