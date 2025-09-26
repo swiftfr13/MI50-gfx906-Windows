@@ -70,6 +70,7 @@ Adapter  0    SEG=0000, BN=07, DN=00, PCIID=66A11002, SSID=********)
 sudo ./amdvbflash -s 0 originalvbios.rom
 ```
 - If you have multiple AMD GPUs, the number '0' should be replaced with the Adapter number of the MI50.
+
 - Output
 ```
 0x100000 bytes saved, checksum-=0x382B
