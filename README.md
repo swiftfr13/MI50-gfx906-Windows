@@ -2,9 +2,14 @@
 Guide on running Radeon Instinct MI50 32GB as a normal GPU in Windows
 
 ## Things to know before you install
-# This only works on the 32gb version of the Radeon Instinct MI50, and doing this on the 16gb version will probably result in bricking your GPU. There are already a lot of guides on flashing the 16gb version so use that instead
+# This only works on the 32gb version of the Radeon Instinct MI50, and doing this on the 16gb version will result in bricking your GPU. There are already a lot of guides on flashing the 16gb version so you should use that instead
+# This only works on the 32gb version of the Radeon Instinct MI50, and doing this on the 16gb version will result in bricking your GPU. There are already a lot of guides on flashing the 16gb version so you should use that instead
+# This only works on the 32gb version of the Radeon Instinct MI50, and doing this on the 16gb version will result in bricking your GPU. There are already a lot of guides on flashing the 16gb version so you should use that instead
 - As far as I'm concerned, there are two 'official' and one unofficial version of the 32gb version of the MI50. The official version has P/N that either ends with '1413'/'1711' and have multiple stickers on the corner of the backplate, while the unofficial ones have one sticker on the backplate and have less cores. I don't know if it works on the unofficial version since both of my cards were the 1413 variant.
+- 1413 varient has a yellow dot on the small chip on the back of the card near the barcode and a red dot on the small chip near the PCIE slot, while both of the dots on the 1711 varient are green. The 16gb version(P/N: 102D1631410) has a yellow dot near the barcode, and a blue dot near the PCIE slot.
 - There are multiple rom options that can be flashed, but searching on Chinese forums using a translator, they say that the v420 rom should be the best since it has support for UEFI, ReBAR, display output in Windows, and has support for PCIE 4. While the other options such as the Apple rom lacks some features and is less stable, so there is no reason to run the other version of the bios unless it's specifically needed.
+- If you don't need video output and don't know how to flash the bios, you can use rdn-id driver(https://rdn-id.com/) on Windows. You can run it without flashing the bios, but display output won't be available, so if you don't have another gpu, you won't be able to boot unless you have a server motherboard.
+- If your card is beeping, it either means that the power plug is not connected or the gpu temp is too high(there could be more reasons than these two). On Windows before flashing the Bios, my card would overheat while doing nothing and would beep like crazy after around 30 minutes until i shut the whole pc down. I don't know if this issue happenes only on my card or on all cards.
 
 
 ## Host Environment
@@ -13,14 +18,15 @@ Guide on running Radeon Instinct MI50 32GB as a normal GPU in Windows
 - ASPM options related to PCI should be off in Bios. Some options may work, so you'll need to do some trial and error
 - Above 4g Decoding should be on
 - CSM related options should be off
-- It's recommended to have ReBAR on, but on my Z690 Hero having 2x MI50s plus 1 Arc B580 gives me d4 pci resource allocation error so i had to turn if off
-- Bios file for the AMD Radeon Pro V420(Needed in Linux)
-- AMDVBFlash(Needed in Linux)
-- Radeon Driver for the AMD Radeon VII(Needed in Linux)
+- It's recommended to have ReBAR on, but on my Z690 Hero having 2x MI50s plus 1 Arc B580 gave me d4 pci resource allocation error(2x MI50 / 2x MI50 + 1 GTX1070 posted without error), so I had to turn if off
+- Bios file for the AMD Radeon Pro V420
+- AMDVBFlash software
+- Radeon Driver for the AMD Radeon VII
+
 
 ## Download links for the necessary files
 V420 Bios: https://drive.google.com/file/d/1AQlbrnsafzrFXaliV5narZpsJqvfZkft/view?usp=sharing
- - The size of the Bios should be 1.0MB, unlike the Bios from Techpowerup, which is a lot smaller in size.
+ - The size of the Bios should be 1.0MB, unlike the Bios from Techpowerup, which is less than half in size.
 
 AMDVBFlash: https://www.techpowerup.com/download/ati-atiflash/
  - The version I used is v4.71
@@ -28,22 +34,22 @@ AMDVBFlash: https://www.techpowerup.com/download/ati-atiflash/
 Radeon Driver: https://www.amd.com/en/support/downloads/previous-drivers.html/graphics/radeon-rx/radeon-rx-vega-series/amd-radeon-vii.html
  - Latest version that works as far as I know is v24.9.1, released in 2024-10-01. Newest version doesn't include the driver for the Radeon Pro VII, which is the one we need.
 
+
 ## Getting ready
 - After installing Linux(Ubuntu in this case), download AMDVBFlash.
 - Extract the file and cd into the extracted folder.
 ```
 cd /EXTRACTED-FOLDER
 ```
-
 - Edit the permission so that it can be executed.
 ```
 sudo chmod +x ./amdvbflash
 ```
-
 - List current installed AMD GPUs.
 ```
 sudo ./amdvbflash -ai
 ```
+
 - Output example
 ```
 Adapter  0    SEG=0000, BN=07, DN=00, PCIID=66A11002, SSID=********)
@@ -74,10 +80,12 @@ sudo ./amdvbflash -s 0 originalvbios.rom
 ```
 sudo ./amdvbflash -unlockrom 0
 ```
+
 - Output
 ```
 ROM Unlocked
 ```
+
 
 ## Flashing the Bios
 - Download the V420 Bios, copy the file to the AMDVBFlash folder, and change the name to something simple, such as v420.bin
@@ -87,11 +95,13 @@ ROM Unlocked
 # Flashing the Bios can possibly brick your GPU, so do it at your own risk!! Check the command before executing it
 # Flashing the Bios can possibly brick your GPU, so do it at your own risk!! Check the command before executing it
 ```
-sudo ./amdvbflash -f(Force flash) -p #GPU_ID #FILE_NAME
+sudo ./amdvbflash -f -p #GPU_ID #FILE_NAME
 ```
+- Example
 ```
 sudo ./amdvbflash -f -p 0 v420.bin
 ```
+
 - Output example
 ```
 Old SSID: 0834
@@ -117,6 +127,7 @@ Restart System To Complete VBIOS Update.
 ```
 sudo ./amdvbflash -ai
 ```
+
 - Output example
 ```
 Adapter  0    SEG=0000, BN=07, DN=00, PCIID=66A11002, SSID=********)
@@ -132,10 +143,12 @@ Adapter  0    SEG=0000, BN=07, DN=00, PCIID=66A11002, SSID=********)
         Image[0]: Size(59392 Bytes), Type(Legacy Image)
         Image[1]: Size(44032 Bytes), Type(Hybrid Image)
 ```
+
 - lspci
 ```
 lspci -vvv
 ```
+
 - Output Example
 ```
 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeon Pro/Radeon Instinct] (prog-if 00 [VGA controller])
@@ -221,6 +234,8 @@ VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 20 [Radeo
 	Kernel driver in use: amdgpu
 	Kernel modules: amdgpu
 ```
+
+
 ## ASPM option
 - After turning on ASPM back on in the Bios, Linux might not be able to initialize the GPU. You should add ASPM related options in /etc/default/grub to initialize the GPU.
 ```
@@ -255,4 +270,44 @@ AMD Radeon Pro VII
 
 - Now, you'll be able to use the Mi50 just like a normal gpu and have display output.
 
-- To cool the GPU, you can install Fan Control, and control the fan installed to the GPU with the temperature of the GPU core. One interesting thing is you can see a header for the 'AMD Radeon Pro VII', so you might be able to solder the pins to the GPU PCB and use the fan from there. You can just use the motherboard header and control using Fan Control on Windows and CoolerControl on Ubuntu, so there's really no reason to do it unless you really hate seeing cables in your pc.
+
+## Additional Infos
+- On Ubuntu, 1 flashed MI50 uses around 17~21W of power when idle(reported from rocm-smi). Meanwhile on Windows GPU-Z reports that 1 card uses 12~18W while idle for some reason. I don't know if the power consumption on idle is actually different or the calculation method is the one that's different.
+- If you got a fan module where you have to replace the original shroud, it's not a bad idea to cover the beeper with 1 layer of electrical tape so that even when it beeps it's not too loud.
+- To cool the GPU, you can install Fan Control on Windows and CoolerControl on Ubuntu to control the fan installed to the GPU with the temperature of the GPU core. One interesting thing is you can see a header for the 'AMD Radeon Pro VII', so you might be able to solder the pins to the GPU PCB and use the fan from there if you really want.
+
+- You can set the power limit to your liking on Ubuntu by using this command.
+```
+rocm-smi --setpoweroverdrive NUMBER_IN_WATTS(ex. 125)
+```
+- After executing the command you can use 'rocm-smi' to find out if it's working.
+
+- The power limit resets every time you reboot your computer, so you need to make a script to execute this command every time you log on.
+```
+sudo nano /etc/systemd/system/rocm-powerlimit.service
+```
+- Paste the command below
+```
+[Unit]
+Description=Set ROCm GPU Power Limit
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 5
+ExecStart=/opt/rocm/bin/rocm-smi --setpower 100
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+- Save and exit
+```
+sudo systemctl daemon-reload
+sudo systemctl enable rocm-power.service
+```
+- Reboot, execute 'rocm-smi' to see if the script works
+
+
+## Issues
+- I don't know if this happenes on every card, but having the pc on sleep without the fan on overheats my gpu after a couple of hours for some reason. So test if the gpu is overheating while the pc is on sleep before you leave it without turning the pc off.
