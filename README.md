@@ -18,7 +18,7 @@ Guide on running Radeon Instinct MI50 32GB as a normal GPU in Windows
 - ASPM options related to PCI should be off in Bios. Some options may work, so you'll need to do some trial and error
 - Above 4g Decoding should be on
 - CSM related options should be off
-- It's recommended to have ReBAR on, but on my Z690 Hero motherboard with an I5-14600K having 2x MI50s plus 1 Arc B580 gave me d4 pci resource allocation error(2x MI50 / 2x MI50 + 1 GTX1070 posted without error) and wouldn't post no matter what I did, so I had to turn if off
+- It's recommended to have ReBAR on, but on my Z690 Hero/Core i5-14600K/96gb DDR5 @5200Mhz CL38/3x SSD having 2x MI50s + Arc B580 gave me d4 "pci resource allocation error"(1x MI50 + Arc B580/ 2x MI50 / 2x MI50 + GTX1070(No support for ReBAR) posted without error) and wouldn't post no matter what I did(removing all SSDs, turning off SATA/other onboard devices, locking PCIE version to 3/4, resetting the Bios, etc), so I had to turn ReBAR off(see https://rog-forum.asus.com/t5/intel-700-600-series/d4-q-code/td-p/1098366).
 - Bios file for the AMD Radeon Pro V420
 - AMDVBFlash software
 - Radeon Driver for the AMD Radeon VII
