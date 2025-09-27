@@ -1,4 +1,4 @@
-# MI50-gfx906-Windows
+# MI50-gfx906-Infos
 Guide on running Radeon Instinct MI50 32GB as a normal GPU in Windows
 
 ## Things to know before you install
