@@ -269,6 +269,6 @@ WantedBy=multi-user.target
 - Save and exit
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable rocm-power.service
+sudo systemctl enable rocm-powerlimit.service
 ```
 - Reboot, execute 'rocm-smi' to see if the script works
