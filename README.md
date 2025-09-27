@@ -262,7 +262,7 @@ AMD Radeon Pro VII
 
 
 ## Additional Infos
-- On Ubuntu, 1 flashed MI50 uses around 17~21W of power when idle(reported from rocm-smi). Meanwhile on Windows GPU-Z reports that 1 card uses 12~18W while idle for some reason. I don't know if the power consumption on idle is actually different or the calculation method is the one that's different.
+- On Ubuntu, 1 flashed MI50 uses around 17-21W of power when idle(reported from rocm-smi). Meanwhile on Windows GPU-Z reports that 1 card uses 12-18W while idle for some reason. I don't know if the power consumption on idle is actually different or the calculation method is the one that's different.
 - If you got a fan module where you have to replace the original shroud, it's not a bad idea to cover the beeper with 1 layer of electrical tape so that even when it beeps it's not too loud.
 - To cool the GPU, you can install Fan Control on Windows and CoolerControl on Ubuntu to control the fan installed to the GPU with the temperature of the GPU core. One interesting thing is you can see a header for the 'AMD Radeon Pro VII', so you might be able to solder the pins to the GPU PCB and use the fan from there if you really want.
 
